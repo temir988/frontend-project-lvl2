@@ -6,4 +6,4 @@
 
 ## Example commands
 
-[![asciicast](https://asciinema.org/a/FpvFHCZgWlnObxqIblOeyACzA.svg)](https://asciinema.org/a/FpvFHCZgWlnObxqIblOeyACzA)
+[![asciicast](https://asciinema.org/a/lTWPjfRAx6snQEfCxtigG4sbO.svg)](https://asciinema.org/a/lTWPjfRAx6snQEfCxtigG4sbO)
