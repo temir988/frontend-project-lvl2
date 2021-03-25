@@ -13,7 +13,6 @@ const getData = (filepath) => JSON.parse(fs.readFileSync(filepath, 'utf-8'));
  * @param {String} filepath1
  * @return {String}
  */
-
 const genDiff = (filepath1, filepath2) => {
   let result = '{';
   const data1 = getData(filepath1);

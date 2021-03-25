@@ -1,3 +1,8 @@
+# Gendiff
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/e35a91de270f1a8cde08/maintainability)](https://codeclimate.com/github/temir988/frontend-project-lvl2/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/e35a91de270f1a8cde08/test_coverage)](https://codeclimate.com/github/temir988/frontend-project-lvl2/test_coverage)
+
 ### Hexlet tests and linter status:
 
 [![Actions Status](https://github.com/temir988/frontend-project-lvl2/workflows/hexlet-check/badge.svg)](https://github.com/temir988/frontend-project-lvl2/actions)
