@@ -1,14 +1,13 @@
-/**
- * @param {Object}
- * @return {String}
- */
-
 const statusSymbols = {
   unmodified: ' ',
   added: '+',
   removed: '-',
 };
 
+/**
+ * @param {Object}
+ * @return {String}
+ */
 const diffToString = (diff) => {
   const result = diff.reduce((acc, { key, value, status }) => {
     const newAcc = `${acc}

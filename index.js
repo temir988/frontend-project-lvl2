@@ -1,5 +1,7 @@
-import program from 'commander';
+import { Command } from 'commander/esm.mjs';
 import genDiff from './src/genDiff.js';
+
+const program = new Command();
 
 const run = () => {
   program

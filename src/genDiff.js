@@ -40,7 +40,7 @@ const genDiff = (filepath1, filepath2) => {
       diff.push({ key, value: data2[key], status: 'added' });
     }
   });
-  console.log(diff);
+
   const result = diffToString(diff);
   return result;
 };
