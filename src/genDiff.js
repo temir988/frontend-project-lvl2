@@ -2,6 +2,8 @@
 
 import fs from 'fs';
 import _ from 'lodash';
+import yaml from 'js-yaml';
+import path from 'path';
 
 import diffToString from './diffToString.js';
 
@@ -9,15 +11,33 @@ import diffToString from './diffToString.js';
  * @param {String} filepath
  * @return {Object}
  */
-const getData = (filepath) => JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+const getFileData = (filepath) => fs.readFileSync(filepath, 'utf-8');
+
+/**
+ * 
+ * @param {String} ext
+ * @param {String}  data
+ * @return {Object}
+ */
+const parseFile = (ext, data) => {
+  const parser = {
+    json: JSON.parse,
+    yaml: yaml.load,
+    yml: yaml.load,
+  };
+
+  return parser[ext](data);
+};
 
 /**
  * @param {String} filepath1
  * @return {String}
  */
 const genDiff = (filepath1, filepath2) => {
-  const data1 = getData(filepath1);
-  const data2 = getData(filepath2);
+  const ext = path.extname(filepath1).slice(1);
+
+  const data1 = parseFile(ext, getFileData(filepath1));
+  const data2 = parseFile(ext, getFileData(filepath2));
 
   const keys1 = Object.keys(data1);
   const keys2 = Object.keys(data2);

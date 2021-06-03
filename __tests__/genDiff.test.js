@@ -14,7 +14,7 @@ beforeAll(() => {
 });
 
 describe('Testing gendiff', () => {
-  test('Basic 1 lvl json', () => {
+  test('Basic 1 level json', () => {
     const filepath1 = `${fixturesPath}/file1.json`;
     const filepath2 = `${fixturesPath}/file2.json`;
 
