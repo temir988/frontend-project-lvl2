@@ -2,32 +2,16 @@
 
 import fs from 'fs';
 import _ from 'lodash';
-import yaml from 'js-yaml';
 import path from 'path';
 
-import diffToString from './diffToString.js';
+import { diffToString } from './diffToString.js';
+import { parseFile } from './parsers.js';
 
 /**
  * @param {String} filepath
  * @return {Object}
  */
 const getFileData = (filepath) => fs.readFileSync(filepath, 'utf-8');
-
-/**
- * 
- * @param {String} ext
- * @param {String}  data
- * @return {Object}
- */
-const parseFile = (ext, data) => {
-  const parser = {
-    json: JSON.parse,
-    yaml: yaml.load,
-    yml: yaml.load,
-  };
-
-  return parser[ext](data);
-};
 
 /**
  * @param {String} filepath1
