@@ -12,3 +12,7 @@
 ## Example commands
 
 [![asciicast](https://asciinema.org/a/XC6HYXPP2PmdodbO0GE7jUnkF.svg)](https://asciinema.org/a/XC6HYXPP2PmdodbO0GE7jUnkF)
+
+## Work with yaml
+
+[![asciicast](https://asciinema.org/a/TXkEiRtQILz0IhQ47kILh4kAS.svg)](https://asciinema.org/a/TXkEiRtQILz0IhQ47kILh4kAS)
