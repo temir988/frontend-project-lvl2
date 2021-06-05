@@ -8,7 +8,7 @@ const statusSymbols = {
  * @param {Object}
  * @return {String}
  */
-export const diffToString = (diff) => {
+const diffToString = (diff) => {
   const result = diff.reduce((acc, { key, value, status }) => {
     const newAcc = `${acc}
   ${statusSymbols[status]} ${key}: ${value}`;
@@ -16,3 +16,5 @@ export const diffToString = (diff) => {
   }, '');
   return `{${result}\n}`;
 };
+
+export default diffToString;

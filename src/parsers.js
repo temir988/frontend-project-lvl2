@@ -6,7 +6,7 @@ import yaml from 'js-yaml';
  * @param {String}  data
  * @return {Object}
  */
-export const parseFile = (ext, data) => {
+const parseFile = (ext, data) => {
   const parser = {
     json: JSON.parse,
     yaml: yaml.load,
@@ -15,3 +15,5 @@ export const parseFile = (ext, data) => {
 
   return parser[ext](data);
 };
+
+export default parseFile;

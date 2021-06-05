@@ -4,8 +4,8 @@ import fs from 'fs';
 import _ from 'lodash';
 import path from 'path';
 
-import { diffToString } from './diffToString.js';
-import { parseFile } from './parsers.js';
+import diffToString from './diffToString.js';
+import parseFile from './parsers.js';
 
 /**
  * @param {String} filepath
