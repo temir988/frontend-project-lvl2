@@ -32,4 +32,12 @@ describe('Testing gendiff', () => {
 
     expect(genDiff(filepath1, filepath2)).toBe(result);
   });
+
+  test('Deep json files', () => {
+    const deepResult = readFileSync('deepResult.txt');
+    const filepath1 = getFixturePath('deep1.json');
+    const filepath2 = getFixturePath('deep2.json');
+
+    expect(genDiff(filepath1, filepath2)).toBe(deepResult);
+  });
 });
