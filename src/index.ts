@@ -1,26 +1,27 @@
+import { readFileSync } from "node:fs";
+
+import { formatStyle } from "./format";
+import type { Style } from "./model";
 import { parseFiles } from "./parse";
 
-export default function genDiff(
-  f1: string,
-  f2: string,
-  format: "stylish" | "plain",
-) {
-  console.log(format);
-  readFiles(f1, f2);
+export default function genDiff(f1: string, f2: string, format: Style = "stylish") {
+  const diff = readFiles(f1, f2);
+  const res = formatStyle(diff, format);
+  return res;
 }
 
-async function readFiles(f1: string, f2: string) {
-  const file1 = Bun.file(f1);
-  const file2 = Bun.file(f2);
+function readFiles(f1: string, f2: string) {
+  const file1 = readFileSync(f1, "utf-8");
+  const file2 = readFileSync(f2, "utf-8");
 
-  const data1 = (await file1.json()) as unknown;
-  const data2 = (await file2.json()) as unknown;
+  const data1 = JSON.parse(file1);
+  const data2 = JSON.parse(file2);
 
   if (!isRecord(data1) || !isRecord(data2)) {
     throw new Error("not valid data");
   }
 
-  parseFiles(data1, data2);
+  return parseFiles(data1, data2);
 }
 
 function isRecord(value: unknown): value is Record<string, unknown> {

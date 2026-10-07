@@ -1,9 +1,6 @@
 import type { DiffObject } from "./model";
 
-export function parseFiles(
-  d1: Record<string, unknown>,
-  d2: Record<string, unknown>,
-): DiffObject {
+export function parseFiles(d1: Record<string, unknown>, d2: Record<string, unknown>): DiffObject {
   const diff: DiffObject = {};
   const keys = new Set(Object.keys(d1).concat(Object.keys(d2)).toSorted());
   for (const key of keys) {
@@ -11,14 +8,14 @@ export function parseFiles(
     const have2 = Object.hasOwn(d2, key);
     if (have1 && have2) {
       if (d1[key] == d2[key]) {
-        diff[key] = "unchanged";
+        diff[key] = { status: "unchanged", value: d1[key] };
       } else {
-        diff[key] = "changed";
+        diff[key] = { status: "changed", value: d1[key], newValue: d2[key] };
       }
     } else if (have1 && !have2) {
-      diff[key] = "removed";
+      diff[key] = { status: "removed", value: d1[key] };
     } else {
-      diff[key] = "added";
+      diff[key] = { status: "added", value: d2[key] };
     }
   }
   return diff;
