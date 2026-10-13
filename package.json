@@ -13,7 +13,8 @@
     "lint:fix": "oxlint --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "test": "vitest"
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "dependencies": {
     "commander": "^15.0.0"
@@ -21,6 +22,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/bun": "latest",
+    "@vitest/coverage-v8": "5.0.3",
     "oxfmt": "^0.71.0",
     "oxlint": "^1.86.0",
     "vitest": "^5.0.3"

@@ -26,4 +26,4 @@ jobs:
           bun run lint
       - name: Test & publish code coverage
         run: |
-          bun run test
+          bun run coverage
