@@ -1,6 +1,6 @@
 import type { DiffObject } from "./model";
 
-export function parseFiles(d1: Record<string, unknown>, d2: Record<string, unknown>): DiffObject {
+export function getDiff(d1: Record<string, unknown>, d2: Record<string, unknown>): DiffObject {
   const diff: DiffObject = {};
   const keys = new Set(Object.keys(d1).concat(Object.keys(d2)).toSorted());
   for (const key of keys) {

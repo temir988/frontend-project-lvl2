@@ -17,7 +17,8 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "commander": "^15.0.0"
+    "commander": "^15.0.0",
+    "js-yaml": "^5.5.0"
   },
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.6.1",
