@@ -1,21 +1,21 @@
-import { load } from 'js-yaml';
+import { load } from "js-yaml";
 
 interface Parser {
-  parse: (s: string) => unknown,
+  parse: (s: string) => unknown;
 }
 
 type SupportedFiles = ".json" | ".yaml" | ".yml";
 
 export function getParser(ext: SupportedFiles | string): Parser {
-  if (ext === '.json') {
+  if (ext === ".json") {
     return {
-      parse: JSON.parse
-    }
+      parse: JSON.parse,
+    };
   } else if (ext === ".yaml" || ext === ".yml") {
     return {
-      parse: load
-    }
+      parse: load,
+    };
   }
 
-  throw new Error("Unsupported file extention")
+  throw new Error("Unsupported file extention");
 }

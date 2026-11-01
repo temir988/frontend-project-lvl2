@@ -28,8 +28,6 @@ function readFiles(f1: string, f2: string) {
   return getDiff(data1, data2);
 }
 
-
-
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
