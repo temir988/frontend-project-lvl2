@@ -1,4 +1,4 @@
-import type { DiffObject } from "../model";
+import type { DiffObject } from "../model.ts";
 
 function formatValue(value: unknown): string {
   if (typeof value === "object" && value !== null) {

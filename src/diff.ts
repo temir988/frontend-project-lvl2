@@ -1,4 +1,4 @@
-import type { DiffObject } from "./model";
+import type { DiffObject } from "./model.ts";
 
 function isObject(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);

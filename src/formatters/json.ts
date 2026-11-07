@@ -1,4 +1,4 @@
-import type { DiffObject } from "../model";
+import type { DiffObject } from "../model.ts";
 
 export type JsonNode = {
   status: string;

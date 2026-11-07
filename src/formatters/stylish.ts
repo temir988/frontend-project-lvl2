@@ -1,4 +1,4 @@
-import type { DiffKeyStatus, DiffObject } from "../model";
+import type { DiffKeyStatus, DiffObject } from "../model.ts";
 
 const indentSize = 4;
 

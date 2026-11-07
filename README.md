@@ -5,13 +5,19 @@
 To install dependencies:
 
 ```bash
-bun install
+npm install
 ```
 
 To run:
 
 ```bash
-bun run index.ts
+node src/cli.ts
+```
+
+Usage:
+
+```bash
+node src/cli.ts <filepath1> <filepath2>
 ```
 
 ## Example of flat files

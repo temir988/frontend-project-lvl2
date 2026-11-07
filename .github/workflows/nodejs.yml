@@ -11,19 +11,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: install deps
         run: |
-          bun install
+          npm install
         env:
           CI: true
       - name: Run formatter
         run: |
-          bun run fmt
+          npm run fmt:check
       - name: Run linter
         run: |
-          bun run lint
+          npm run lint
       - name: Test & publish code coverage
         run: |
-          bun run coverage
+          npm run coverage

@@ -1,7 +1,7 @@
-import type { DiffObject, Style } from "../model";
-import { styleDiff } from "./stylish";
-import { plainDiff } from "./plain";
-import { jsonDiff } from "./json";
+import type { DiffObject, Style } from "../model.ts";
+import { styleDiff } from "./stylish.ts";
+import { plainDiff } from "./plain.ts";
+import { jsonDiff } from "./json.ts";
 
 export function formatStyle(diff: DiffObject, format: Style) {
   if (format === "stylish") {
