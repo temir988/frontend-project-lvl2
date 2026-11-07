@@ -8,4 +8,4 @@ export type DiffObject = {
     children?: DiffObject;
   };
 };
-export type Style = "stylish" | "plain";
+export type Style = "stylish" | "plain" | "json";
