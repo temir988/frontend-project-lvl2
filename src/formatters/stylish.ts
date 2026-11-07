@@ -1,4 +1,4 @@
-import type { DiffKeyStatus, DiffObject, Style } from "./model";
+import type { DiffKeyStatus, DiffObject } from "../model";
 
 const indentSize = 4;
 
@@ -27,7 +27,7 @@ function stringifyValue(value: unknown, depth: number): string {
   return `{\n${entries.join("\n")}\n${buildIndent(depth)}}`;
 }
 
-function formatDiff(diff: DiffObject): string[] {
+export function styleDiff(diff: DiffObject): string[] {
   return Object.entries(diff).flatMap(([key, node]): string[] => {
     const { status, depth } = node;
     const markerIndent = buildIndent(depth).slice(2);
@@ -35,7 +35,7 @@ function formatDiff(diff: DiffObject): string[] {
       case "nested": {
         return [
           `${buildIndent(depth)}${key}: {`,
-          ...formatDiff(node.children!),
+          ...styleDiff(node.children!),
           `${buildIndent(depth)}}`,
         ];
       }
@@ -52,10 +52,4 @@ function formatDiff(diff: DiffObject): string[] {
       }
     }
   });
-}
-
-export function formatStyle(diff: DiffObject, format: Style) {
-  if (format === "stylish") {
-    return `{\n${formatDiff(diff).join("\n")}\n}`;
-  }
 }

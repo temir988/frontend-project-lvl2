@@ -1,10 +1,9 @@
 import { readFileSync } from "node:fs";
-
-import { formatStyle } from "./format";
-import type { Style } from "./model";
 import { getDiff } from "./diff";
 import path from "node:path";
 import { getParser } from "./parsers";
+import { formatStyle } from "./formatters";
+import type { Style } from "./model";
 
 export default function genDiff(f1: string, f2: string, format: Style = "stylish") {
   const diff = readFiles(f1, f2);
